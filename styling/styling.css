@@ -1,0 +1,213 @@
+/* ~~~~~ Mixins ~~~~~ */
+/* ~~~~~ General Styling ~~~~~ */
+body {
+  margin: 0;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Abril Fatface", cursive;
+  margin: 0;
+}
+
+p,
+li {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+/* ~~~~~ LAYOUT/ SPECIFIC STYLING ~~~~~ */
+/* Nav */
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .logo {
+  width: 35px;
+  padding: 1%;
+}
+
+nav ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0 5% 0 5%;
+}
+
+/* Landing Section */
+.landing-sec {
+  height: 160vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(5%, white), color-stop(25%, transparent)), url("../Images/placeholderimgs/spiral-1149509_1920.jpg");
+  background-image: linear-gradient(to top, white 5%, transparent 25% 80%), url("../Images/placeholderimgs/spiral-1149509_1920.jpg");
+  background-size: cover;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing-sec div {
+  margin-top: -60vh;
+}
+
+.landing-sec div h1 {
+  font-size: 7rem;
+}
+
+.landing-sec div p {
+  font-size: 1.5rem;
+}
+
+.landing-sec div .circle {
+  font-size: 0.7rem;
+}
+
+#landing-img {
+  width: 100%;
+}
+
+/* Intro */
+.intro-sec {
+  margin: 0 5% 0 5%;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "intro-p gallery-img";
+  margin-top: -60vh;
+  background-color: white;
+  padding: 5%;
+}
+
+.intro-sec .intro {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: intro-p;
+  padding-right: 10%;
+}
+
+.intro-sec .intro h2 {
+  font-size: 3rem;
+}
+
+.intro-sec img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: gallery-img;
+  height: 80vh;
+}
+
+/* Services */
+.service-banner {
+  grid-area: banner;
+  background: no-repeat center fixed url("../Images/placeholderimgs/victor-rodriguez-753741-unsplash.jpg");
+  background-size: cover;
+  height: 400px;
+  margin-bottom: 5%;
+}
+
+.service-banner h3 {
+  text-align: right;
+  font-size: 5rem;
+  position: absolute;
+  margin-top: -2.5rem;
+  right: 0;
+  margin-right: 5%;
+  line-height: 4.2rem;
+}
+
+.services {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "card1 card2 card3" "card4 card5 card6";
+  padding: 0 20% 0 20%;
+  grid-gap: 40px;
+}
+
+.services div:nth-of-type(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: card1;
+}
+
+.services div:nth-of-type(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: card2;
+}
+
+.services div:nth-of-type(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: card3;
+}
+
+.services div:nth-of-type(5) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: card4;
+}
+
+.services div:nth-of-type(6) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: card5;
+}
+
+.services div:nth-of-type(7) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: card6;
+}
+
+.services .card h2 {
+  font-size: 3rem;
+}
+
+.services .card h2::before {
+  content: "";
+  /* Decide wether to do it or not */
+}
+
+.services .card button {
+  width: 50%;
+}
+
+/* Contact */
+.contact-us {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: white;
+}
+/*# sourceMappingURL=styling.css.map */

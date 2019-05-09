@@ -1,0 +1,187 @@
+/* ~~~~~ Mixins ~~~~~ */
+
+@mixin centerAlign {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin paddingTenLR {
+  padding: 0 5% 0 5%;
+}
+
+/* ~~~~~ General Styling ~~~~~ */
+
+body {
+  margin: 0;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Abril Fatface", cursive;
+  margin: 0;
+}
+
+p,
+li {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+/* ~~~~~ LAYOUT/ SPECIFIC STYLING ~~~~~ */
+/* Nav */
+
+nav {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  @include centerAlign();
+
+  .logo {
+    width: 35px;
+    padding: 1%;
+  }
+
+  ul {
+    list-style-type: none;
+    width: 100%;
+    li {
+      display: inline-block;
+      padding: 0 5% 0 5%;
+    }
+  }
+}
+
+/* Landing Section */
+
+.landing-sec {
+  height: 160vh;
+  display: flex;
+  background-image: linear-gradient(to top, white 5%, transparent 25% 80%),
+    url("../Images/placeholderimgs/spiral-1149509_1920.jpg");
+  background-size: cover;
+  @include centerAlign();
+  div {
+    margin-top: -60vh;
+    h1 {
+      font-size: 7rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    .circle {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+#landing-img {
+  width: 100%;
+}
+
+/* Intro */
+
+.intro-sec {
+  margin: 0 5% 0 5%;
+  display: grid;
+  grid-template-areas: "intro-p gallery-img";
+  margin-top: -60vh;
+  background-color: white;
+  padding: 5%;
+  .intro {
+    grid-area: intro-p;
+    padding-right: 10%;
+    h2 {
+      font-size: 3rem;
+    }
+  }
+  img {
+    grid-area: gallery-img;
+    height: 80vh;
+  }
+}
+
+/* Services */
+.service-banner {
+  grid-area: banner;
+  background: no-repeat center fixed
+    url("../Images/placeholderimgs/victor-rodriguez-753741-unsplash.jpg");
+  background-size: cover;
+  height: 400px;
+  margin-bottom: 5%;
+  h3 {
+    text-align: right;
+    font-size: 5rem;
+    position: absolute;
+    margin-top: -2.5rem;
+    right: 0;
+    margin-right: 5%;
+    line-height: 4.2rem;
+  }
+}
+
+.services {
+  display: grid;
+  grid-template-areas:
+    "card1 card2 card3"
+    "card4 card5 card6";
+  padding: 0 20% 0 20%;
+  grid-gap: 40px;
+
+  div:nth-of-type(2) {
+    grid-area: card1;
+  }
+  div:nth-of-type(3) {
+    grid-area: card2;
+  }
+  div:nth-of-type(4) {
+    grid-area: card3;
+  }
+  div:nth-of-type(5) {
+    grid-area: card4;
+  }
+  div:nth-of-type(6) {
+    grid-area: card5;
+  }
+  div:nth-of-type(7) {
+    grid-area: card6;
+  }
+
+  .card {
+    h2 {
+      font-size: 3rem;
+    }
+    h2::before {
+      content: "";
+      /* Decide wether to do it or not */
+    }
+    button {
+      width: 50%;
+    }
+  }
+}
+
+/* Contact */
+
+.contact-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .contact-info {
+  }
+  iframe {
+  }
+  textarea {
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: white;
+}
