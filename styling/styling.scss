@@ -1,4 +1,4 @@
-/* ~~~~~ Mixins ~~~~~ */
+/* ~~~~~ MIXINS ~~~~~ */
 
 @mixin centerAlign {
   text-align: center;
@@ -9,6 +9,10 @@
 @mixin paddingTenLR {
   padding: 0 5% 0 5%;
 }
+
+/* ~~~~~ COLOUR VARS ~~~~~ */
+
+$black: #111111;
 
 /* ~~~~~ General Styling ~~~~~ */
 
@@ -21,16 +25,26 @@ img {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: $black;
+  :visited {
+    color: $black;
+  }
+}
+
 h1,
 h2,
 h3,
 h4 {
   font-family: "Abril Fatface", cursive;
   margin: 0;
+  color: $black;
 }
 
 p,
-li {
+li,
+button {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
@@ -42,6 +56,7 @@ nav {
   position: fixed;
   width: 100%;
   @include centerAlign();
+  background-color: white;
 
   .logo {
     width: 35px;
@@ -93,12 +108,12 @@ nav {
   grid-template-areas: "intro-p gallery-img";
   margin-top: -60vh;
   background-color: white;
-  padding: 5%;
+  padding: 5% 5% 15% 5%;
   .intro {
     grid-area: intro-p;
     padding-right: 10%;
     h2 {
-      font-size: 3rem;
+      font-size: 5rem;
     }
   }
   img {
@@ -154,15 +169,24 @@ nav {
   }
 
   .card {
+    text-align: center;
     h2 {
       font-size: 3rem;
+      text-align: left;
     }
     h2::before {
       content: "";
       /* Decide wether to do it or not */
     }
+    p {
+      text-align: left;
+    }
     button {
-      width: 50%;
+      padding: 0.8rem 3rem 0.8rem 3rem;
+      margin-top: 2%;
+      background: none;
+      border: 1px solid $black;
+      font-size: 1rem;
     }
   }
 }
@@ -172,16 +196,46 @@ nav {
 .contact-us {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 5%;
+  @include paddingTenLR();
+  padding-top: 10%;
   .contact-info {
+    h2 {
+      font-size: 3rem;
+      padding-bottom: 1.5rem;
+    }
   }
   iframe {
+    width: 100%;
+  }
+}
+
+/* Form */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  padding-top: 5%;
+  grid-gap: 100px;
+  border: 1px solid black;
+  input {
+    display: block;
+    width: 100%;
+    grid-column: 1/2;
   }
   textarea {
+    grid-column: 2/3;
+    width: 100%;
+    padding: 0;
   }
 }
 
 /* Footer */
 footer {
+  display: flex;
+  @include centerAlign();
+  margin-top: 5%;
   text-align: center;
   background: white;
+  height: 3rem;
 }
