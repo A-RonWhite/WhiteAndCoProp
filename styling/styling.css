@@ -6,7 +6,9 @@ body {
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
-img {
+img,
+input,
+textarea {
   width: 100%;
 }
 
@@ -30,16 +32,19 @@ h4 {
 
 p,
 li,
-button {
+button,
+a,
+label {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 /* ~~~~~ LAYOUT/ SPECIFIC STYLING ~~~~~ */
 /* Nav */
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
   position: fixed;
   width: 100%;
   text-align: center;
@@ -52,19 +57,31 @@ nav {
   background-color: white;
 }
 
-nav .logo {
-  width: 35px;
+nav #logo {
   padding: 1%;
+  -ms-flex-item-align: left;
+      -ms-grid-row-align: left;
+      align-self: left;
 }
 
-nav ul {
+nav #logo .logo {
+  width: 35px;
+}
+
+nav div {
   list-style-type: none;
   width: 100%;
 }
 
-nav ul li {
+nav div a {
   display: inline-block;
   padding: 0 5% 0 5%;
+}
+
+nav .nav-contact {
+  text-align: right;
+  padding-right: 1%;
+  font-size: 0.8rem;
 }
 
 /* Landing Section */
@@ -124,14 +141,34 @@ nav ul li {
 }
 
 .intro-sec .intro h2 {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
-.intro-sec img {
+.intro-sec div:nth-of-type(2) {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: gallery-img;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intro-sec div:nth-of-type(2) img {
   height: 80vh;
+}
+
+.intro-sec div:nth-of-type(2) a {
+  position: absolute;
+  border: 1px solid white;
+  padding: 1rem 2rem 1rem 2rem;
+  color: white;
 }
 
 /* Services */
@@ -224,7 +261,7 @@ nav ul li {
 }
 
 /* Contact */
-.contact-us {
+#contact-us {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -232,43 +269,28 @@ nav ul li {
   grid-gap: 5%;
   padding: 0 5% 0 5%;
   padding-top: 10%;
+  /* Form */
 }
 
-.contact-us .contact-info h2 {
+#contact-us h2 {
   font-size: 3rem;
   padding-bottom: 1.5rem;
+  grid-column: 1/-1;
 }
 
-.contact-us iframe {
+#contact-us .contact-info iframe {
   width: 100%;
 }
 
-/* Form */
-form {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  width: 100%;
-  padding-top: 5%;
-  grid-gap: 100px;
-  border: 1px solid black;
-}
-
-form input {
+#contact-us form label {
+  padding: 2% 0 2% 0;
   display: block;
-  width: 100%;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
 }
 
-form textarea {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  width: 100%;
-  padding: 0;
+#contact-us form input {
+  background: none;
+  border-radius: 3px;
+  border: solid black 1px;
 }
 
 /* Footer */
